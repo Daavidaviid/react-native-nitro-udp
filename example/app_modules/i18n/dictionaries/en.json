@@ -1,0 +1,11 @@
+{
+  "home": {
+    "title": "Home",
+    "start_game": "Start a new game",
+    "enter_room": "Enter room"
+  },
+  "game": {
+    "player": "Player {{playerIndex}}",
+    "hold": "Hold"
+  }
+}

@@ -1,0 +1,8 @@
+/.expo
+node_modules
+.eslintrc.js
+babel.config.js
+metro.config.js
+scripts/postinstall.js
+dist
+./plugin/*.js

@@ -1,0 +1,6 @@
+{
+  "u18nKey": "get-your-own-api-key-at-u18n.com",
+  "baseLanguage": "en",
+  "languagesFolder": "./app_modules/i18n/dictionaries",
+  "languages": ["fr", "en", "es", "pt_BR"]
+}

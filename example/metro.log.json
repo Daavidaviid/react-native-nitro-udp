@@ -1,0 +1,198 @@
+{
+  "resolver": {
+    "assetExts": [
+      "bmp",
+      "gif",
+      "jpg",
+      "jpeg",
+      "png",
+      "psd",
+      "svg",
+      "webp",
+      "xml",
+      "m4v",
+      "mov",
+      "mp4",
+      "mpeg",
+      "mpg",
+      "webm",
+      "aac",
+      "aiff",
+      "caf",
+      "m4a",
+      "mp3",
+      "wav",
+      "html",
+      "pdf",
+      "yaml",
+      "yml",
+      "otf",
+      "ttf",
+      "zip",
+      "heic",
+      "avif",
+      "db",
+      "glb",
+      "gltf",
+      "jpg",
+      "bin",
+      "hdr"
+    ],
+    "assetResolutions": [
+      "1",
+      "1.5",
+      "2",
+      "3",
+      "4"
+    ],
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "sourceExts": [
+      "ts",
+      "tsx",
+      "mjs",
+      "js",
+      "jsx",
+      "json",
+      "cjs",
+      "scss",
+      "sass",
+      "css"
+    ],
+    "blockList": {},
+    "disableHierarchicalLookup": true,
+    "emptyModulePath": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example/node_modules/metro-runtime/src/modules/empty-module.js",
+    "enableGlobalPackages": false,
+    "extraNodeModules": {
+      "three": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example/node_modules/three"
+    },
+    "nodeModulesPaths": [
+      "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example/node_modules",
+      "/Users/lepatron/workspace/experiment_nitro/react-native-udp/node_modules"
+    ],
+    "resolverMainFields": [
+      "react-native",
+      "browser",
+      "main"
+    ],
+    "unstable_conditionNames": [
+      "browser",
+      "require",
+      "react-native"
+    ],
+    "unstable_conditionsByPlatform": {
+      "ios": [
+        "react-native"
+      ],
+      "android": [
+        "react-native"
+      ],
+      "web": [
+        "browser"
+      ]
+    },
+    "unstable_enablePackageExports": true,
+    "useWatchman": true,
+    "requireCycleIgnorePatterns": [
+      {}
+    ]
+  },
+  "serializer": {
+    "polyfillModuleNames": []
+  },
+  "server": {
+    "forwardClientLogs": true,
+    "port": 8081,
+    "unstable_serverRoot": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example",
+    "useGlobalHotkey": true,
+    "verifyConnections": false
+  },
+  "symbolicator": {},
+  "transformer": {
+    "assetPlugins": [],
+    "asyncRequireModulePath": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example/node_modules/@expo/metro-config/build/async-require.js",
+    "assetRegistryPath": "@react-native/assets-registry/registry",
+    "babelTransformerPath": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example/node_modules/@expo/metro-config/build/babel-transformer.js",
+    "dynamicDepsInPackages": "throwAtRuntime",
+    "enableBabelRCLookup": true,
+    "enableBabelRuntime": true,
+    "globalPrefix": "",
+    "hermesParser": false,
+    "minifierConfig": {
+      "mangle": {
+        "toplevel": false
+      },
+      "output": {
+        "ascii_only": true,
+        "quote_style": 3,
+        "wrap_iife": true
+      },
+      "sourceMap": {
+        "includeSources": false
+      },
+      "toplevel": false,
+      "compress": {
+        "reduce_funcs": false
+      }
+    },
+    "minifierPath": "metro-minify-terser",
+    "optimizationSizeLimit": 153600,
+    "transformVariants": {
+      "default": {}
+    },
+    "workerPath": "metro/src/DeltaBundler/Worker",
+    "publicPath": "/assets",
+    "allowOptionalDependencies": true,
+    "unstable_allowRequireContext": true,
+    "unstable_dependencyMapReservedName": null,
+    "unstable_disableModuleWrapping": false,
+    "unstable_disableNormalizePseudoGlobals": false,
+    "unstable_renameRequire": false,
+    "unstable_compactOutput": false,
+    "unstable_memoizeInlineRequires": false,
+    "unstable_workerThreads": false,
+    "postcssHash": null,
+    "browserslistHash": null,
+    "sassVersion": null,
+    "reanimatedVersion": "3.17.5",
+    "_expoRelativeProjectRoot": ""
+  },
+  "watcher": {
+    "additionalExts": [
+      "env",
+      "local",
+      "development"
+    ],
+    "healthCheck": {
+      "enabled": false,
+      "filePrefix": ".metro-health-check",
+      "interval": 30000,
+      "timeout": 5000
+    },
+    "unstable_lazySha1": true,
+    "unstable_workerThreads": false,
+    "unstable_autoSaveCache": {
+      "enabled": true,
+      "debounceMs": 5000
+    },
+    "watchman": {
+      "deferStates": [
+        "hg.update"
+      ]
+    }
+  },
+  "cacheStores": [
+    {
+      "_root": "/var/folders/w1/xng2b71j01ggynnhxwbb8q180000gn/T/metro-cache"
+    }
+  ],
+  "cacheVersion": "1.0",
+  "projectRoot": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example",
+  "stickyWorkers": true,
+  "watchFolders": [],
+  "transformerPath": "/Users/lepatron/workspace/experiment_nitro/react-native-udp/example/node_modules/@expo/metro-config/build/transform-worker/transform-worker.js",
+  "maxWorkers": 7,
+  "resetCache": false
+}
