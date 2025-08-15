@@ -22,6 +22,18 @@ Pod::Spec.new do |s|
     "cpp/**/*.{hpp,cpp}",
   ]
 
+  s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1"
+
+  s.pod_target_xcconfig = {
+    "HEADER_SEARCH_PATHS" => [
+      "\"${PODS_ROOT}/Headers/Private/Yoga\"",
+      "${PODS_ROOT}/RCT-Folly",
+    ],
+    'DEFINES_MODULE' => 'YES',
+    "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) FOLLY_NO_CONFIG FOLLY_CFG_NO_COROUTINES",
+    "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
+  }
+
   load 'nitrogen/generated/ios/NitroUdp+autolinking.rb'
   add_nitrogen_files(s)
 
