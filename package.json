@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-udp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react-native-nitro-udp",
   "main": "lib/index",
   "module": "lib/index",
@@ -42,14 +42,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrousavy/nitro.git"
+    "url": "git+https://github.com/Daavidaviid/react-native-nitro-udp.git"
   },
   "author": "Marc Rousavy <me@mrousavy.com> (https://github.com/mrousavy)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrousavy/nitro/issues"
+    "url": "https://github.com/Daavidaviid/react-native-nitro-udp/issues"
   },
-  "homepage": "https://github.com/mrousavy/nitro#readme",
+  "homepage": "https://github.com/Daavidaviid/react-native-nitro-udp#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

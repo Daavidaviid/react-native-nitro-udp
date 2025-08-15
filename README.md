@@ -32,8 +32,12 @@ Use the `useUdp()` hook:
 const LOCALHOST = Platform.OS === 'android' ? '10.0.2.2' : '127.0.0.1'
 
 function HomeScreen() {
-  const { send } = useUdp({ host: LOCALHOST, port: 1234 }, (data) => {
-    console.log('Received data:', data)
+  const { send } = useUdp({
+    host: LOCALHOST,
+    port: 1234,
+    onReceive: (data) => {
+      console.log('Received data:', data)
+    },
   })
 
   return <Button title="Send" onPress={() => send(new TextEncoder().encode('Hello, world!').buffer)} />
