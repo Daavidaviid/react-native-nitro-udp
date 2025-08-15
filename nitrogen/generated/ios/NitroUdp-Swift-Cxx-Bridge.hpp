@@ -8,6 +8,10 @@
 #pragma once
 
 // Forward declarations of C++ defined types
+// Forward declaration of `ArrayBufferHolder` to properly resolve imports.
+namespace NitroModules { class ArrayBufferHolder; }
+// Forward declaration of `ArrayBuffer` to properly resolve imports.
+namespace NitroModules { class ArrayBuffer; }
 // Forward declaration of `HybridUdpSpec` to properly resolve imports.
 namespace margelo::nitro::udp { class HybridUdpSpec; }
 
@@ -17,11 +21,12 @@ namespace NitroUdp { class HybridUdpSpec_cxx; }
 
 // Include C++ defined types
 #include "HybridUdpSpec.hpp"
+#include <NitroModules/ArrayBuffer.hpp>
+#include <NitroModules/ArrayBufferHolder.hpp>
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <functional>
 #include <memory>
-#include <string>
 
 /**
  * Contains specialized versions of C++ templated types so they can be accessed from Swift,
@@ -29,26 +34,26 @@ namespace NitroUdp { class HybridUdpSpec_cxx; }
  */
 namespace margelo::nitro::udp::bridge::swift {
 
-  // pragma MARK: std::function<void(const std::string& /* data */)>
+  // pragma MARK: std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>
   /**
-   * Specialized version of `std::function<void(const std::string&)>`.
+   * Specialized version of `std::function<void(const std::shared_ptr<ArrayBuffer>&)>`.
    */
-  using Func_void_std__string = std::function<void(const std::string& /* data */)>;
+  using Func_void_std__shared_ptr_ArrayBuffer_ = std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>;
   /**
-   * Wrapper class for a `std::function<void(const std::string& / * data * /)>`, this can be used from Swift.
+   * Wrapper class for a `std::function<void(const std::shared_ptr<ArrayBuffer>& / * data * /)>`, this can be used from Swift.
    */
-  class Func_void_std__string_Wrapper final {
+  class Func_void_std__shared_ptr_ArrayBuffer__Wrapper final {
   public:
-    explicit Func_void_std__string_Wrapper(std::function<void(const std::string& /* data */)>&& func): _function(std::make_unique<std::function<void(const std::string& /* data */)>>(std::move(func))) {}
-    inline void call(std::string data) const {
-      _function->operator()(data);
+    explicit Func_void_std__shared_ptr_ArrayBuffer__Wrapper(std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>&& func): _function(std::make_unique<std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>>(std::move(func))) {}
+    inline void call(ArrayBufferHolder data) const {
+      _function->operator()(data.getArrayBuffer());
     }
   private:
-    std::unique_ptr<std::function<void(const std::string& /* data */)>> _function;
+    std::unique_ptr<std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>> _function;
   } SWIFT_NONCOPYABLE;
-  Func_void_std__string create_Func_void_std__string(void* _Nonnull swiftClosureWrapper);
-  inline Func_void_std__string_Wrapper wrap_Func_void_std__string(Func_void_std__string value) {
-    return Func_void_std__string_Wrapper(std::move(value));
+  Func_void_std__shared_ptr_ArrayBuffer_ create_Func_void_std__shared_ptr_ArrayBuffer_(void* _Nonnull swiftClosureWrapper);
+  inline Func_void_std__shared_ptr_ArrayBuffer__Wrapper wrap_Func_void_std__shared_ptr_ArrayBuffer_(Func_void_std__shared_ptr_ArrayBuffer_ value) {
+    return Func_void_std__shared_ptr_ArrayBuffer__Wrapper(std::move(value));
   }
   
   // pragma MARK: std::shared_ptr<margelo::nitro::udp::HybridUdpSpec>

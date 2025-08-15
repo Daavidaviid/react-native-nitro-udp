@@ -7,11 +7,15 @@
 
 #include "JHybridUdpSpec.hpp"
 
-
+// Forward declaration of `ArrayBuffer` to properly resolve imports.
+namespace NitroModules { class ArrayBuffer; }
 
 #include <string>
+#include <NitroModules/ArrayBuffer.hpp>
+#include <NitroModules/JArrayBuffer.hpp>
+#include <NitroModules/JUnit.hpp>
 #include <functional>
-#include "JFunc_void_std__string.hpp"
+#include "JFunc_void_std__shared_ptr_ArrayBuffer_.hpp"
 
 namespace margelo::nitro::udp {
 
@@ -43,13 +47,13 @@ namespace margelo::nitro::udp {
     static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<jni::JString> /* host */, double /* port */)>("initialize");
     method(_javaPart, jni::make_jstring(host), port);
   }
-  void JHybridUdpSpec::send(const std::string& data) {
-    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<jni::JString> /* data */)>("send");
-    method(_javaPart, jni::make_jstring(data));
+  void JHybridUdpSpec::send(const std::shared_ptr<ArrayBuffer>& data) {
+    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<JArrayBuffer::javaobject> /* data */)>("send");
+    method(_javaPart, JArrayBuffer::wrap(data));
   }
-  void JHybridUdpSpec::onReceive(const std::function<void(const std::string& /* data */)>& callback) {
-    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<JFunc_void_std__string::javaobject> /* callback */)>("onReceive_cxx");
-    method(_javaPart, JFunc_void_std__string_cxx::fromCpp(callback));
+  void JHybridUdpSpec::onReceive(const std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>& callback) {
+    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<JFunc_void_std__shared_ptr_ArrayBuffer_::javaobject> /* callback */)>("onReceive_cxx");
+    method(_javaPart, JFunc_void_std__shared_ptr_ArrayBuffer__cxx::fromCpp(callback));
   }
   void JHybridUdpSpec::close() {
     static const auto method = javaClassStatic()->getMethod<void()>("close");

@@ -13,11 +13,11 @@
 
 namespace margelo::nitro::udp::bridge::swift {
 
-  // pragma MARK: std::function<void(const std::string& /* data */)>
-  Func_void_std__string create_Func_void_std__string(void* _Nonnull swiftClosureWrapper) {
-    auto swiftClosure = NitroUdp::Func_void_std__string::fromUnsafe(swiftClosureWrapper);
-    return [swiftClosure = std::move(swiftClosure)](const std::string& data) mutable -> void {
-      swiftClosure.call(data);
+  // pragma MARK: std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>
+  Func_void_std__shared_ptr_ArrayBuffer_ create_Func_void_std__shared_ptr_ArrayBuffer_(void* _Nonnull swiftClosureWrapper) {
+    auto swiftClosure = NitroUdp::Func_void_std__shared_ptr_ArrayBuffer_::fromUnsafe(swiftClosureWrapper);
+    return [swiftClosure = std::move(swiftClosure)](const std::shared_ptr<ArrayBuffer>& data) mutable -> void {
+      swiftClosure.call(ArrayBufferHolder(data));
     };
   }
   

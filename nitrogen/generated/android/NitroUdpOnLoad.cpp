@@ -16,7 +16,7 @@
 #include <NitroModules/HybridObjectRegistry.hpp>
 
 #include "JHybridUdpSpec.hpp"
-#include "JFunc_void_std__string.hpp"
+#include "JFunc_void_std__shared_ptr_ArrayBuffer_.hpp"
 #include <NitroModules/JNISharedPtr.hpp>
 #include <NitroModules/DefaultConstructableObject.hpp>
 
@@ -30,7 +30,7 @@ int initialize(JavaVM* vm) {
   return facebook::jni::initialize(vm, [] {
     // Register native JNI methods
     margelo::nitro::udp::JHybridUdpSpec::registerNatives();
-    margelo::nitro::udp::JFunc_void_std__string_cxx::registerNatives();
+    margelo::nitro::udp::JFunc_void_std__shared_ptr_ArrayBuffer__cxx::registerNatives();
 
     // Register Nitro Hybrid Objects
     HybridObjectRegistry::registerHybridObjectConstructor(

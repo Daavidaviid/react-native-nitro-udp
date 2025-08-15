@@ -13,9 +13,11 @@
 #error NitroModules cannot be found! Are you sure you installed NitroModules properly?
 #endif
 
-
+// Forward declaration of `ArrayBuffer` to properly resolve imports.
+namespace NitroModules { class ArrayBuffer; }
 
 #include <string>
+#include <NitroModules/ArrayBuffer.hpp>
 #include <functional>
 
 namespace margelo::nitro::udp {
@@ -50,8 +52,8 @@ namespace margelo::nitro::udp {
     public:
       // Methods
       virtual void initialize(const std::string& host, double port) = 0;
-      virtual void send(const std::string& data) = 0;
-      virtual void onReceive(const std::function<void(const std::string& /* data */)>& callback) = 0;
+      virtual void send(const std::shared_ptr<ArrayBuffer>& data) = 0;
+      virtual void onReceive(const std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>& callback) = 0;
       virtual void close() = 0;
 
     protected:

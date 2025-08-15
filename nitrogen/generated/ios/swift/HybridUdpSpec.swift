@@ -15,8 +15,8 @@ public protocol HybridUdpSpec_protocol: HybridObject {
 
   // Methods
   func initialize(host: String, port: Double) throws -> Void
-  func send(data: String) throws -> Void
-  func onReceive(callback: @escaping (_ data: String) -> Void) throws -> Void
+  func send(data: ArrayBuffer) throws -> Void
+  func onReceive(callback: @escaping (_ data: ArrayBuffer) -> Void) throws -> Void
   func close() throws -> Void
 }
 

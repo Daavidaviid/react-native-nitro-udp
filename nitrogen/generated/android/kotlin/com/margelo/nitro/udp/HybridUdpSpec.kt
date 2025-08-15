@@ -46,13 +46,13 @@ abstract class HybridUdpSpec: HybridObject() {
   
   @DoNotStrip
   @Keep
-  abstract fun send(data: String): Unit
+  abstract fun send(data: ArrayBuffer): Unit
   
-  abstract fun onReceive(callback: (data: String) -> Unit): Unit
+  abstract fun onReceive(callback: (data: ArrayBuffer) -> Unit): Unit
   
   @DoNotStrip
   @Keep
-  private fun onReceive_cxx(callback: Func_void_std__string): Unit {
+  private fun onReceive_cxx(callback: Func_void_std__shared_ptr_ArrayBuffer_): Unit {
     val __result = onReceive(callback)
     return __result
   }

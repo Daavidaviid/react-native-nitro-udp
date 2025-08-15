@@ -8,11 +8,14 @@
 #pragma once
 
 // Forward declarations of C++ defined types
+// Forward declaration of `ArrayBuffer` to properly resolve imports.
+namespace NitroModules { class ArrayBuffer; }
 // Forward declaration of `HybridUdpSpec` to properly resolve imports.
 namespace margelo::nitro::udp { class HybridUdpSpec; }
 
 // Include C++ defined types
 #include "HybridUdpSpec.hpp"
+#include <NitroModules/ArrayBuffer.hpp>
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <functional>

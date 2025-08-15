@@ -53,8 +53,8 @@ namespace margelo::nitro::udp {
   public:
     // Methods
     void initialize(const std::string& host, double port) override;
-    void send(const std::string& data) override;
-    void onReceive(const std::function<void(const std::string& /* data */)>& callback) override;
+    void send(const std::shared_ptr<ArrayBuffer>& data) override;
+    void onReceive(const std::function<void(const std::shared_ptr<ArrayBuffer>& /* data */)>& callback) override;
     void close() override;
 
   private:

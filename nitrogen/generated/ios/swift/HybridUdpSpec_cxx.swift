@@ -121,9 +121,9 @@ open class HybridUdpSpec_cxx {
   }
   
   @inline(__always)
-  public final func send(data: std.string) -> bridge.Result_void_ {
+  public final func send(data: ArrayBuffer) -> bridge.Result_void_ {
     do {
-      try self.__implementation.send(data: String(data))
+      try self.__implementation.send(data: data)
       return bridge.create_Result_void_()
     } catch (let __error) {
       let __exceptionPtr = __error.toCpp()
@@ -132,12 +132,12 @@ open class HybridUdpSpec_cxx {
   }
   
   @inline(__always)
-  public final func onReceive(callback: bridge.Func_void_std__string) -> bridge.Result_void_ {
+  public final func onReceive(callback: bridge.Func_void_std__shared_ptr_ArrayBuffer_) -> bridge.Result_void_ {
     do {
-      try self.__implementation.onReceive(callback: { () -> (String) -> Void in
-        let __wrappedFunction = bridge.wrap_Func_void_std__string(callback)
-        return { (__data: String) -> Void in
-          __wrappedFunction.call(std.string(__data))
+      try self.__implementation.onReceive(callback: { () -> (ArrayBuffer) -> Void in
+        let __wrappedFunction = bridge.wrap_Func_void_std__shared_ptr_ArrayBuffer_(callback)
+        return { (__data: ArrayBuffer) -> Void in
+          __wrappedFunction.call(__data)
         }
       }())
       return bridge.create_Result_void_()
